@@ -65,10 +65,14 @@ async function analyzeVideo() {
     videoAlerts = []; // Reset alerts for new analysis
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/analyze_video", {
-            method: "POST",
-            body: formData
-        });
+        const response = await fetch(
+  "https://visibility-detection.onrender.com/analyze_video",
+  {
+    method: "POST",
+    body: formData
+  }
+   );
+
 
         if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         
@@ -111,4 +115,5 @@ async function analyzeVideo() {
             </div>
         `;
     }
+
 }
