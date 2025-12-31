@@ -1,0 +1,296 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.container {
+  width: 60%;
+  margin: 40px auto;
+  background: #020617;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  color: #38bdf8;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+#status {
+  margin-top: 15px;
+  color: #fbbf24;
+}
+
+pre {
+  margin-top: 20px;
+  background: #020617;
+  padding: 15px;
+  border-radius: 6px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+#output {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+/* --- BASE STYLES --- */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #020617;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #38bdf8;
+    text-align: center;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+#status {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #38bdf8;
+    text-align: center;
+}
+
+#videoPlayer {
+    width: 100%;
+    max-width: 800px;
+    display: none;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 2px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+#output {
+    margin-top: 20px;
+}
+
+/* --- DASHBOARD SUMMARY STYLES --- */
+
+.summary-container {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid #334155;
+}
+
+.summary-container h3 {
+    margin-top: 0;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* --- CIRCULAR PROGRESS BAR --- */
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* Uses the --value variable from JS to fill the ring */
+    background: conic-gradient(#38bdf8 calc(var(--value) * 1%), #334155 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+}
+
+/* The inner hole to make it a "ring" */
+.progress-circle::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #1e293b; 
+    border-radius: 50%;
+}
+
+.progress-circle span {
+    position: relative;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #38bdf8;
+}
+
+/* --- DATA GRID STYLES --- */
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.data-item {
+    background: rgba(15, 23, 42, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* --- LIVE ALERT LOG --- */
+#alertList {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+#alertList p {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    background: rgba(56, 189, 248, 0.05);
+    border-left: 4px solid #38bdf8;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* OVERLAY CSS - CRITICAL FOR THE VISUALS */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px solid #334155;
+    background: black;
+}
+
+#videoPlayer {
+    width: 100%;
+    display: block;
+}
+
+#videoCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicking play/pause through the drawings */
+}
+
+/* Dashboard Circles */
+.summary-container {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.stats-row { display: flex; justify-content: space-around; }
+.progress-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: conic-gradient(#38bdf8 calc(var(--value) * 1%), #334155 0deg);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+}
+.progress-circle::before {
+    content: ""; position: absolute; width: 65px; height: 65px;
+    background: #1e293b; border-radius: 50%;
+}
+.progress-circle span { position: relative; z-index: 2; font-weight: bold; }
+button { padding: 10px 20px; background: #38bdf8; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; }
+

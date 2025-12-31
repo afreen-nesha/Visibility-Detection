@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Surgical Safety Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Safety Video Analyzer</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="videoInput" accept="video/*">
+            <button id="analyzeBtn">Analyze Video</button>
+        </div>
+
+        <div class="video-wrapper">
+            <video id="videoPlayer" controls></video>
+            <canvas id="videoCanvas"></canvas>
+        </div>
+
+        <div id="status"></div>
+        <div id="output"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
