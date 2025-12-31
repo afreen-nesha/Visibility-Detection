@@ -60,9 +60,6 @@ https://visibility-detection.onrender.com/
 
 > Backend processing is optimized for **short demo videos** due to compute limitations on free-tier hosting.
 
-## Output Screenshots
-_Add screenshots of system output here._
-
 ## Technology Stack
 - Frontend: HTML, CSS, JavaScript
 - Backend: FastAPI (Python)
